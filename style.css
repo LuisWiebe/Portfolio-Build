@@ -1,10 +1,26 @@
+.nav{
+    padding: 20px 40px;
+}
+.nav nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-links{
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+.hamburger{
+    display: none;
+    font-size: 24px;
+}
 nav ul{
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #a686bc;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color:black;
     text-align: center;
     box-sizing: border-box;
 }
@@ -18,4 +34,156 @@ nav ul a{
     padding: 14px 16px;
     text-decoration: none;
     font-size: 20px;
+}
+
+.hero{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 60px 80px;
+}
+.hero-image{
+    width: 260px;
+    height: 260px;
+    background: #000;
+    border-radius: 10px;
+}
+.hero-text h1{
+    font-size: 64px;
+    line-height: 1;
+}
+.hero-text p{
+    font-size: 14px;
+    max-width: 400px;
+}
+
+body{
+    background-color: #a686bc
+}
+
+/* WORK GRID */
+.work{
+    padding: 40px 80px;
+}
+
+.work-grid{
+    display: grid;
+    grid-template-columns: (3, 1fr);
+    gap: 30px;
+}
+
+.card{
+    background: #000;
+    color: #fff;
+    height: 160px;
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-end;
+    padding: 15px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+/* ABOUT */
+.about{
+    text-align: center;
+    padding: 80px 80px 40px;
+}
+
+.about h2{
+    font-size: 48px;
+}
+
+.subtitle{
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.about-text{
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* CONTACT */
+.contact{
+    display: flex;
+    gap: 40px;
+    padding: 40px 80px 80px;
+}
+
+.contact-card{
+    background: #000;
+    color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    flex: 1;
+}
+
+.contact-card h3{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.skills{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.skills h4{
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.skills ul{
+    list-style: none;
+    font-size: 12px;
+}
+
+.contact-info{
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.contact-image{
+    background: #000;
+    flex: 1;
+    border-radius: 12px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px){
+        .hero{
+            flex-direction: column;
+            text-align: center;
+        }
+
+    .work-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact{
+        flex-direction: column;
+    }
+
+    .nav-links{
+        display: none;
+    }
+
+    .hamburger{
+        display: block;
+    }
+
+}
+
+@media (max-width: 500px){
+    .work-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .hero-text h1{
+        font-size: 48px;
+    }
 }
