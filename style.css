@@ -1,3 +1,4 @@
+/*Navigation*/
 .nav{
     padding: 20px 40px;
 }
@@ -14,6 +15,7 @@
 .hamburger{
     display: none;
     font-size: 24px;
+    color: white;
 }
 nav ul{
     margin: 0;
@@ -42,19 +44,35 @@ nav ul a{
     gap: 40px;
     padding: 60px 80px;
 }
-.hero-image{
+
+/*Stand in Profile Image*/
+.image-container{
     width: 260px;
     height: 260px;
     background: #000;
     border-radius: 10px;
 }
+.image-container img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    
+}
+img:hover {
+    transform: scale(1.2);
+}
+
+/*LUIS HEADER*/
 .hero-text h1{
     font-size: 64px;
     line-height: 1;
+    color: white;
 }
 .hero-text p{
     font-size: 14px;
     max-width: 400px;
+    color: white;
 }
 
 body{
@@ -88,10 +106,12 @@ body{
 .about{
     text-align: center;
     padding: 80px 80px 40px;
+    color: white;
 }
 
 .about h2{
     font-size: 48px;
+    color: white;
 }
 
 .subtitle{
@@ -104,6 +124,7 @@ body{
     margin: 0 auto;
     font-size: 14px;
     line-height: 1.6;
+    color: white;
 }
 
 /* CONTACT */
@@ -145,6 +166,7 @@ body{
 .contact-info{
     font-size: 12px;
     line-height: 1.6;
+    color: white;
 }
 
 .contact-image{
