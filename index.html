@@ -7,6 +7,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <script>
+       var onClick = function() {
+
+       }
+
+       var ham = document.getElementById('hamburger');
+       var ham = document.getElementById('navigation');
+
+       ham.addEventListner("click", function(event) {
+            console.log(event);
+            list.toggle('open');
+       }
+    
+    );
+    </script>
     <!--NAV-->
     <header class="nav">
     <nav role="navigation" aria-label="Main Nav">
@@ -15,11 +30,14 @@
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
         </ul>
-        <div class="hamburger">
-           <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
+        <button id="hamburger">
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div> 
+        </button>
+        
     </nav>
 </header>
 
