@@ -1,5 +1,7 @@
 /*Navigation*/
-.nav{
+.nav {
+    margin: auto;
+    border: 20px 20px 20px;
     padding: 20px 40px;
 }
 .nav nav{
@@ -7,7 +9,7 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    padding: 14px 16px;
+    padding: 20px 20px;
 }
 .nav-links{
     display: flex;
@@ -82,7 +84,19 @@ nav ul a{
     height: 560px;
     background: #000;
     border-radius: 10px;
+    display: flex;
+    justify-content: left;
+    width: 100%;
+    flex: 0 1 50%;
+    min-width: 500px;
+    max-width: 500px;
+    height: 500px;
+    border: 30px;
+    
+    box-sizing: border-box;
+    margin: 15px 30px;
 }
+
 .image-container img{
     max-width: 100%;
     height: auto;
@@ -96,16 +110,18 @@ img:hover {
 
 /*LUIS HEADER*/
 .hero-text h1{
-    font-size: 190px;
+    font-size: 150px;
     line-height: 1;
     color: white;
+    padding: 15px 20px;
 }
 .hero-text p{
     font-size: 34px;
     max-width: 800px;
     color: white;
     display: flex;
-    margin-top: -100px;
+    margin-top: -105px;
+    padding: 15px 20px;
 
 }
 
@@ -298,13 +314,13 @@ body{
 
 }
 
-@media (max-width: 600px){
+@media (max-width: 500px){
     .work-grid{
         grid-template-columns: 1fr;
     }
 
     .hero-text h1{
-        font-size: 170px;
+        font-size: 110px;
     }
 
         .hero-text p {
@@ -312,7 +328,7 @@ body{
             max-width: 800px;
             color: white;
             display: flex;
-            margin-top: 90px;
+            margin-top: -50px;
     
         }
 
