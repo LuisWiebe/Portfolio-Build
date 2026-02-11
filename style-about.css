@@ -3,11 +3,13 @@
     margin: auto;
     border: 20px 20px 20px;
     padding: 20px 40px;
+    justify-content: center;
+    align-items: center;
 }
 
 .nav nav {
-    display: flex;
     justify-content: center;
+    align-items: center;
     overflow: hidden;
     padding: 20px 20px;
 }
@@ -52,26 +54,29 @@
 
 }
 
-nav ul {
+.nav ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #a686bc;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
+    justify-content: center;
+    align-items: center;
     box-sizing: border-box;
 }
 
-nav ul {
-    float: left;
+.nav ul {
     text-align: center;
 }
 
-nav ul a {
+.nav ul a {
     display: contents;
     color: white;
     stroke: black;
     padding: 80px;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     text-decoration: none;
     font-size: 50px;
@@ -86,49 +91,49 @@ body {
 }
 
 /*HERO*/
-.img-container{
-   width: 560px;
-   height: 560px;
-   background-color: black;
-   border-radius: 10px;
-   display: flex;
-   justify-content: left;
-   width: 100%;
-   flex: 0 1 50%;
-   min-width: 300px;
-   max-width: 300px;
-   height: 300px;
-   border: 30px;
-   padding: 150px;
-   box-sizing: border-box;
-   margin: 15px 30px;
-}
 
 .hero {
     display: flex;
-    align-items: center;
     gap: 20px;
     padding: 20px 30px 20px;
+    display: inline;
 }
 
-.hero-text h1{
-    display: flex;
+.hero-text h1 {
+
     line-height: 1;
+    text-align: center;
+    justify-content: left;
     font-size: 65px;
     color: white;
     padding: 20px 20px;
 }
 
-.hero-text p{
-    display: flex;
+.hero-text p {
     line-height: 1;
+    text-align: center;
+    justify-content: left;
     font-size: 25px;
     color: white;
     padding: 5px 20px;
+    word-spacing: 2px;
 }
 
+.img-container{
+   width: 800px;
+   height: 1020px;
+   float: right;
+   justify-content: right;
+   background-color: black;
+   border-radius: 10px;
+   box-sizing: border-box;
+   margin: 0 80px;
+   padding: 0;
+}
+
+
 /* RESPONSIVE */
-@media (max-width: 900px) {
+@media (max-width: 1920px) {
     .hero {
         flex-direction: column;
         text-align: center;
@@ -148,7 +153,7 @@ body {
 
 }
 
-@media (max-width: 500px) {
+@media (max-width: 720px) {
     .work-grid {
         grid-template-columns: 1fr;
     }
