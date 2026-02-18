@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body{
+                margin: 0;
+                padding: 0;
+                }
+                .slideshow{
+                    background-color: black;
+                }
+
+                .viewport{
+                    overflow: hidden;
+                }
+
+                .track{
+                    display: flex;
+                    width: 100%;
+                    transform: translateX(0%);
+                    transition: transform 300ms ease;
+                }
+
+                .slide{
+                    min-width: 100%;
+                    margin: 0;
+                    position: relative;
+                }
+
+                .slide img{
+                    width: 100%;
+                    display: block;
+                    height: auto;
+                }
+
+                .slide figcaption{
+                    position: absolute;
+                    left: 10px;
+                    bottom: 10px;
+                    padding: 6px 10px;
+                    color: white;
+                    font-size: 14px;
+                    background: rgba(0, 0, 0, 0.5)
+                }
+
+                .controls button{
+                    color: red;
+                    background: black;
+                    border: 1px solid yellow;
+                    padding: 10px 12px;
+                }
+            
+
+        </style>
+    </head>
+    <body>
+    <main class="page">
+        <h1>My super cool slideshow</h1>
+        <section class="slideshow" aria-label="Image slideshow">
+                    <div class="viewport">
+                        <div class="track" id="track">
+                            <figure class="slide">
+                                <img src="https://picsum.photos/id/1010/1200/700" alt="child reading bible">
+                                <figcaption>Young Child reading The Bible.</figcaption>
+                            </figure>
+                            <figure class="slide">
+                                <img src="https://picsum.photos/id/1050/1200/700" alt="child reading bible">
+                                <figcaption>Beautiful Water Mountainscape.</figcaption>
+                            </figure>
+                            <figure class="slide">
+                                <img src="https://picsum.photos/id/1013/1200/700" alt="child reading bible">
+                                <figcaption>Vintage Wedding Photo.</figcaption>
+                            </figure>
+                            <figure class="slide">
+                                <img src="https://picsum.photos/id/1077/1200/700" alt="child reading bible">
+                                <figcaption>Motion Blur of Bicylcists.</figcaption>
+                            </figure>
+                        </div>
+                     </div>
+            <div class="controls">
+                <button id="prevBtn">Previous Slide</button>
+                <button id="nextBtn">Next Slide</button>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const track = document.querySelector('#track');
+        const slides = document.querySelectorAll('.slide');
+
+        const prevBtn = document.querySelector('#prevBtn');
+        const nextBtn = document.querySelector('#nextBtn');
+
+        var currentSlide = 0;
+        var timeId = null;
+
+        function goToSlide(index) {
+            if (index < 0) {
+                index = slide.length - 1;
+            }
+            if (index >= slides.length) {
+                index = 0;
+            }
+
+            currentSlide = index;
+
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        function prev() {
+               goToSlide(currentSlide - 1) 
+        }
+        function next() {
+                goToSlide(currentSlide + 1)
+        }
+
+        prevBtn.addEventListener("click", prev);
+        nextBtn.addEventListener("click", next);
+
+    </script>
+
+</body>
+</html>
