@@ -46,11 +46,20 @@
                     background: rgba(0, 0, 0, 0.5)
                 }
 
+                .controls{
+                    display: flex;
+                    justify-content: space-between;
+                }
+
                 .controls button{
                     color: red;
                     background: black;
                     border: 1px solid yellow;
                     padding: 10px 12px;
+                }
+
+                .status{
+                    color: white;
                 }
             
 
@@ -82,6 +91,13 @@
                      </div>
             <div class="controls">
                 <button id="prevBtn">Previous Slide</button>
+
+                <p class="status">
+                    <span id="counter">1</span> / <span id="total">4</span>
+                </p>
+
+                <button id="state">Play</button>
+
                 <button id="nextBtn">Next Slide</button>
             </div>
         </section>
@@ -93,6 +109,13 @@
 
         const prevBtn = document.querySelector('#prevBtn');
         const nextBtn = document.querySelector('#nextBtn');
+
+        const counterEl = document.querySelector('#counter');
+        const totalEl = document.querySelector('#total');
+
+        const stateBtn = document.querySelector('#state');
+
+        totalEl.textContent = slides.length;
 
         var currentSlide = 0;
         var timeId = null;
@@ -107,6 +130,8 @@
 
             currentSlide = index;
 
+            counterEl.textContent = currentSlide + 1;
+
             track.style.transform = `translateX(-${currentSlide * 100}%)`;
         }
 
@@ -117,8 +142,34 @@
                 goToSlide(currentSlide + 1)
         }
 
+        function startAutoPlay() {
+            stopAutoPlay();
+            timeId = setInterval(() => next(), 2500);
+            stateBtn.textContent = 'Pause';
+        }
+
+        function stopAutoPlay() {
+            if (timeId !== null) {
+                clearInterval (timeId);
+                timeId = null;
+            }
+            stateBtn.textContent = 'Play';
+        }
+
+        function toggleAutoPlay () {
+            if (timeId) {
+                stopAutoPlay();
+            } else {
+                next();
+                startAutoPlay();
+            }
+        }
+
         prevBtn.addEventListener("click", prev);
         nextBtn.addEventListener("click", next);
+        stateBtn.addEventListener("click", toggleAutoPlay);
+
+        startAutoPlay(); 
 
     </script>
 
