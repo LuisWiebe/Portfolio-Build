@@ -129,4 +129,16 @@ list.addEventListener("click", function(e){
         todos = todos.filter(t => t.id !== id);
         render();
     }
-})
+});
+
+clearCompletedBtn.addEventListener("click", function(){
+    todos = todos.filter(t => !t.completed);
+    render();
+});
+
+filterBtn.forEach(btn => {
+    btn.addEventListener("click", function(){
+        currentFilter = btn.dataset.filter;
+        render();
+    });
+});
