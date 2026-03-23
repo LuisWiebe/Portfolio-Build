@@ -1,16 +1,20 @@
 /*Navigation*/
 .nav {
     margin: auto;
-    border: 20px 20px 20px;
     padding: 20px 40px;
 }
+
 .nav nav{
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    padding: 20px 20px;
+    padding: 20px;
+    background-color: #a686bc;
+    border-radius: 0;
+    position: relative;
 }
+
 .nav-links{
     display: flex;
     list-style: none;
@@ -20,19 +24,27 @@
 .hamburger{
     display: none;
     cursor: pointer;
-    justify-content: right;
     overflow: hidden;
     padding: 14px 16px;
 }
 
 #hamburger{
     width: 30px;
-    height: 30px;
+    height: 40px;
     padding: 0;
     margin: 0;
     background: transparent;
-    display: flex;
+    display: none;
     border: none;
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#hamburger:focus {
+    outline: 2px solid white;
+    outline-offset: 2px;
 }
 
 .bar{
@@ -43,32 +55,40 @@
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     background-color: white;
-    justify-content: right;
-    
 }
 
 nav ul{
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    background-color: #a686bc;
+    display: flex;
+    list-style: none;
+    background-color: transparent;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
     box-sizing: border-box;
+    gap: 30px;
+    align-items: center;
 }
-nav ul{
-    float: left;
-    text-align: center;
+
+nav ul li {
+    list-style: none;
 }
+
 nav ul a{
-    display: contents;
     color: white;
-    stroke: black;
-    padding: 80px;
+    padding: 15px 20px;
     text-align: center;
     text-decoration: none;
-    font-size: 50px;
-    display: inline;
+    font-size: 45px;
+    transition: opacity 0.3s ease;
+    display: inline-block;
+}
+
+nav ul a:hover,
+nav ul a:focus {
+    opacity: 0.8;
+    text-decoration: underline;
+    outline: none;
 }
 
 .hero{
@@ -80,32 +100,31 @@ nav ul a{
 
 /*Stand in Profile Image*/
 .image-container{
-    width: 560px;
-    height: 560px;
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 1;
     background: #000;
     border-radius: 10px;
     display: flex;
-    justify-content: left;
-    width: 100%;
+    justify-content: center;
+    align-items: center;
     flex: 0 1 50%;
-    min-width: 500px;
-    max-width: 500px;
-    height: 500px;
-    border: 30px;
-    
     box-sizing: border-box;
     margin: 15px 30px;
+    overflow: hidden;
 }
 
 .image-container img{
-    max-width: 100%;
-    height: auto;
-    display: flex;
-    margin: 0 auto;
-    
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
 }
+
 img:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
 }
 
 /*LUIS HEADER*/
@@ -116,7 +135,7 @@ img:hover {
     padding: 15px 20px;
 }
 .hero-text p{
-    font-size: 34px;
+    font-size: 45px;
     max-width: 800px;
     color: white;
     display: flex;
@@ -290,66 +309,125 @@ body{
 }
 
 /* RESPONSIVE */
-@media (max-width: 900px){
-        .hero{
-            flex-direction: column;
-            text-align: center;
-        }
-
-    .work-grid{
-        grid-template-columns: repeat(2, 1fr);
+@media (max-width: 768px) {
+    .nav nav {
+        padding: 15px 20px;
     }
-
-    .contact{
+    
+    nav ul a {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+    
+    .hero {
+        flex-direction: column;
+        padding: 30px 20px;
+    }
+    
+    .hero-text h1 {
+        font-size: 48px;
+    }
+    
+    .hero-text p {
+        font-size: 18px;
+        margin-top: -20px;
+    }
+    
+    .contact {
         flex-direction: column;
     }
-
-    .nav-links{
-        display: none;
-    }
-
-    .hamburger{
-        display: block;
-    }
-
 }
 
-@media (max-width: 500px){
-    .work-grid{
-        grid-template-columns: 1fr;
+@media (max-width: 600px) {
+    #hamburger {
+        display: flex;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
     }
-
-    .hero-text h1{
-        font-size: 110px;
-    }
-
-        .hero-text p {
-            font-size: 34px;
-            max-width: 800px;
-            color: white;
-            display: flex;
-            margin-top: -50px;
     
-        }
-
-    .nav ul{
-        display: none;
+    nav ul {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background-color: #a686bc;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
     }
+    
+    nav ul.open {
+        max-height: 300px;
+    }
+    
+    nav ul li {
+        width: 100%;
+    }
+    
+    nav ul a {
+        width: 100%;
+        padding: 15px 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    #hamburger.active .bar:nth-child(1) {
+        transform: translateY(11px) rotate(45deg);
+    }
+    
+    #hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    #hamburger.active .bar:nth-child(3) {
+        transform: translateY(-11px) rotate(-45deg);
+    }
+    
+    .hero {
+        flex-direction: column;
+        padding: 15px 10px;
+        align-items: center;
+    }
+    
+    .hero-text h1 {
+        font-size: 52px;
+        padding: 5px 10px;
+    }
+    
+    .hero-text p {
+        font-size: 28px;
+        padding: 5px 10px;
+        margin-top: 0;
+    }
+    
+    .image-container {
+        max-width: 90vw;
+        width: 100%;
+        margin: 0 auto 20px;
+    }
+}
 
- .hamburger{
-    display: block;
- }
-
- .hamburger.active .bar:nth-child(2){
-    opacity: 0;
- }
-
- .hamburger.active .bar:nth-child(1){
-    transform: translateY(-8px) rotate(-45deg);
- }
-
- .hamburger.active .bar:nth-child(3){
-    transform: translateY(-8px) rotate(-45deg);
- }
-
+@media (max-width: 400px) {
+    .image-container {
+        max-width: 95vw;
+        width: 100%;
+        margin: 0 auto 15px;
+    }
+    
+    .hero {
+        padding: 10px 5px;
+        align-items: center;
+    }
+    
+    .hero-text h1 {
+        font-size: 40px;
+        padding: 5px 10px;
+    }
+    
+    .hero-text p {
+        font-size: 22px;
+        padding: 5px 10px;
+    }
 }

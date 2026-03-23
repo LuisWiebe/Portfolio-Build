@@ -8,27 +8,32 @@
 </head>
 <body>
     <script>
-       var onClick = function() {
-
-       }
-
-       var ham = document.getElementById('hamburger');
-       var ham = document.getElementById('navigation');
-
-       ham.addEventListner("click", function(event) {
-            console.log(event);
-            list.toggle('open');
-       }
-    
-    );
+       document.addEventListener('DOMContentLoaded', function() {
+           const hamburger = document.getElementById('hamburger');
+           const navMenu = document.querySelector('nav ul');
+           
+           hamburger.addEventListener('click', function(event) {
+               navMenu.classList.toggle('open');
+               hamburger.classList.toggle('active');
+           });
+           
+           // Close menu when a link is clicked
+           const navLinks = navMenu.querySelectorAll('a');
+           navLinks.forEach(link => {
+               link.addEventListener('click', function() {
+                   navMenu.classList.remove('open');
+                   hamburger.classList.remove('active');
+               });
+           });
+       });
     </script>
     <!--NAV-->
     <header class="nav">
     <nav role="navigation" aria-label="Main Nav">
         <ul>
-            <a href="index.html" aria-current="page">Home</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
+            <li><a href="index.html" aria-current="page">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
         <button id="hamburger">
             <div class="hamburger">
@@ -45,7 +50,7 @@
     <section class="hero">
                 <a href="About-me">
         <div class="image-container">
-             <img src="Link-SWS.webp">
+             <img src="Link-SWS.webp" alt="Luis Wiebe profile image" loading="lazy" width="500" height="500">
                 </a>
         </div>
 
