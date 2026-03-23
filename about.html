@@ -1,41 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style-about.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About · Portfolio</title>
+  <link rel="stylesheet" href="style-about.css" />
 </head>
 <body>
-    
-    <!--NAV-->
-    <header class="nav">
-        <nav role="navigation" aria-label="Main Nav">
-            <ul>
-                <a href="index.html" aria-current="page">Home</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-            </ul>
-            <button id="hamburger">
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </button>
-    
-        </nav>
-    </header>
+  <header class="site-header">
+    <nav class="main-nav" aria-label="Main navigation">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link active" href="about.html">About</a>
+      <a class="nav-link" href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="page-wrap">
     <section class="hero">
-        <div class="img-container">
+      <article class="hero-text">
+        <h1>Nice to Meet You!</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+          tincidunt ut laoreet dolore magna aliquam erat volutpat.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+          tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim.
+        </p>
 
+        <h2>My Skills</h2>
+        <div class="workspace-grid">
+          <div class="workspace-item">Ps</div>
+          <div class="workspace-item">Ai</div>
+          <div class="workspace-item">Lr</div>
+          <div class="workspace-item">Cp</div>
         </div>
-            <div class="hero-text">
-                <h1>Nice to Meet you!</h1>
-                <p>My name is Luis Wiebe, I'm a Graphic Designer, Character Artist, and Photographer out of Coeur d' Alene, Idaho. It brings me elation to bring other peoples' visions to life. In my free time I throughouly enjoy going to conventions around Washington, Oregon, and Idaho. Either dressed up myself or taking photos for my cosplay friends. I indulge in lots and lots of video games, story-rich fantasy, RPG, TTRPG, Action, Open World, you name it!</p>
-                <p>I'm adept in Illustrator, Photoshop, Clip Studio Paint, and have dabbled in Lightroom, After Effects, and Premiere Pro. I'm passionate about anything related to early 2000s/Punk visuals, music, fashion and more. That tends to be reflected within my personal pieces, or everyday wear. I'd love to get to know you, lets make some magic happen and bring your visions to life! </p>
-            </div>
-    </section>
+      </article>
 
+      <aside class="hero-panel">
+        <div class="image-container"></div>
+      </aside>
+    </section>
+  </main>
 </body>
 </html>
