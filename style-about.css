@@ -1,0 +1,285 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: #a686bc;
+  color: white;
+}
+
+/* Navigation */
+.site-header {
+  padding: 20px 40px;
+  background-color: #a686bc;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 40px;
+  font-weight: normal;
+  padding: 10px 20px;
+  transition: opacity 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* Main Content */
+.page-wrap {
+  padding: 60px 80px;
+}
+
+.hero {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.hero-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.hero-text h1 {
+  font-size: 72px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.hero-text p {
+  font-size: 28px;
+  line-height: 1.6;
+  font-weight: normal;
+}
+
+.hero-text h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Workspace Grid */
+.workspace-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.workspace-item {
+  width: 120px;
+  height: 120px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  font-weight: bold;
+  color: white;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.workspace-item:hover {
+  transform: scale(1.05);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Photoshop */
+.workspace-item:nth-child(1) {
+  background: linear-gradient(135deg, #1f1b3f 0%, #2d2d5f 100%);
+}
+
+/* Illustrator */
+.workspace-item:nth-child(2) {
+  background: linear-gradient(135deg, #4a3820 0%, #6b5430 100%);
+}
+
+/* Lightroom */
+.workspace-item:nth-child(3) {
+  background: linear-gradient(135deg, #1f1b3f 0%, #2d3d5f 100%);
+}
+
+/* Clip Studio Paint (?) */
+.workspace-item:nth-child(4) {
+  background: linear-gradient(135deg, #e8e8e8 0%, #f5f5f5 100%);
+  color: #333;
+}
+
+/* Image Container */
+.hero-panel {
+  flex: 0 0 400px;
+}
+
+.image-container {
+  width: 100%;
+  aspect-ratio: 5/7;
+  background-color: #000;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .page-wrap {
+    padding: 40px 40px;
+  }
+
+  .hero {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .hero-text h1 {
+    font-size: 48px;
+  }
+
+  .hero-text p {
+    font-size: 20px;
+  }
+
+  .nav-link {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    padding: 15px 20px;
+  }
+
+  .main-nav {
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .nav-link {
+    font-size: 18px;
+    padding: 8px 12px;
+  }
+
+  .page-wrap {
+    padding: 30px 20px;
+  }
+
+  .hero {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .hero-panel {
+    flex: 0 0 100%;
+  }
+
+  .image-container {
+    height: 300px;
+  }
+
+  .workspace-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .workspace-item {
+    font-size: 36px;
+    border-radius: 15px;
+    width: 110px;
+    height: 110px;
+  }
+
+  .hero-text h1 {
+    font-size: 36px;
+    line-height: 1.3;
+  }
+
+  .hero-text h2 {
+    font-size: 28px;
+  }
+
+  .hero-text p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header {
+    padding: 12px 15px;
+  }
+
+  .main-nav {
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-link {
+    font-size: 16px;
+    padding: 8px 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .page-wrap {
+    padding: 20px 15px;
+  }
+
+  .hero {
+    gap: 20px;
+  }
+
+  .hero-text {
+    gap: 20px;
+  }
+
+  .hero-text h1 {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .hero-text h2 {
+    font-size: 22px;
+    margin-top: 15px;
+  }
+
+  .hero-text p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .workspace-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .workspace-item {
+    font-size: 28px;
+    border-radius: 12px;
+    border-width: 2px;
+    width: 100px;
+    height: 100px;
+  }
+
+  .image-container {
+    height: 250px;
+    border-radius: 8px;
+  }
+}
